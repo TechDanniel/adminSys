@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    "target": "ES2022",
+    // lib 选项里的 "DOM" 告诉 TypeScript 编译器要加载 DOM 相关的类型定义，这样就能识别 HTMLDivElement 这类类型了。
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "module": "ESNext",
+    "skipLibCheck": false,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    /* Linting */
+    "strict": false,
+    "strictFunctionTypes": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+
+    //简写路径
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+
+    // 提供类型检查和自动补全功能
+    "types":[
+      // vite/client 类型声明文件可以让 TypeScript 识别 Vite 提供的一些特殊功能和 API，像 import.meta.env 这种用于访问环境变量的属性。
+      "vite/client",
+      "node",
+      // 使用这些组件时提供类型检查和自动补全功能
+      "element-plus/global"
+    ],
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts",  "src/**/*.vue", "types/*.d.ts","vite.config.ts"],
+  "exclude": [
+    "dist",
+    "**/*.js",
+    "node_modules"
+  ]
+}

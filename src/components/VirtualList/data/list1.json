@@ -1,0 +1,380 @@
+[
+    {
+      "user_id": "U001",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "张晨",
+      "user_nickname": "晨晨",
+      "gender": "男",
+      "department": "销售部",
+      "phone_number": "13800138001"
+    },
+    {
+      "user_id": "U002",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "李悦",
+      "user_nickname": "悦悦",
+      "gender": "女",
+      "department": "财务部",
+      "phone_number": "13900139002"
+    },
+    {
+      "user_id": "U003",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "王强",
+      "user_nickname": "强子",
+      "gender": "男",
+      "department": "技术部",
+      "phone_number": "13600136003"
+    },
+    {
+      "user_id": "U004",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "刘静",
+      "user_nickname": "静静",
+      "gender": "女",
+      "department": "人力资源部",
+      "phone_number": "13700137004"
+    },
+    {
+      "user_id": "U005",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "赵宇",
+      "user_nickname": "小宇",
+      "gender": "男",
+      "department": "市场部",
+      "phone_number": "13500135005"
+    },
+    {
+      "user_id": "U006",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "陈婷",
+      "user_nickname": "婷婷",
+      "gender": "女",
+      "department": "行政部",
+      "phone_number": "13400134006"
+    },
+    {
+      "user_id": "U007",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "杨辉",
+      "user_nickname": "辉哥",
+      "gender": "男",
+      "department": "研发部",
+      "phone_number": "13300133007"
+    },
+    {
+      "user_id": "U008",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "吴敏",
+      "user_nickname": "敏敏",
+      "gender": "女",
+      "department": "客服部",
+      "phone_number": "13000130008"
+    },
+    {
+      "user_id": "U009",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "周峰",
+      "user_nickname": "峰峰",
+      "gender": "男",
+      "department": "采购部",
+      "phone_number": "13100131009"
+    },
+    {
+      "user_id": "U010",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "徐丽",
+      "user_nickname": "丽丽",
+      "gender": "女",
+      "department": "设计部",
+      "phone_number": "13200132010"
+    },
+    {
+      "user_id": "U011",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "孙杰",
+      "user_nickname": "杰仔",
+      "gender": "男",
+      "department": "销售部",
+      "phone_number": "13800138011"
+    },
+    {
+      "user_id": "U012",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "胡玲",
+      "user_nickname": "玲玲",
+      "gender": "女",
+      "department": "财务部",
+      "phone_number": "13900139012"
+    },
+    {
+      "user_id": "U013",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "郭亮",
+      "user_nickname": "亮亮",
+      "gender": "男",
+      "department": "技术部",
+      "phone_number": "13600136013"
+    },
+    {
+      "user_id": "U014",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "马芳",
+      "user_nickname": "芳芳",
+      "gender": "女",
+      "department": "人力资源部",
+      "phone_number": "13700137014"
+    },
+    {
+      "user_id": "U015",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "朱宇",
+      "user_nickname": "小朱",
+      "gender": "男",
+      "department": "市场部",
+      "phone_number": "13500135015"
+    },
+    {
+      "user_id": "U016",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "林娜",
+      "user_nickname": "娜娜",
+      "gender": "女",
+      "department": "行政部",
+      "phone_number": "13400134016"
+    },
+    {
+      "user_id": "U017",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "何伟",
+      "user_nickname": "伟伟",
+      "gender": "男",
+      "department": "研发部",
+      "phone_number": "13300133017"
+    },
+    {
+      "user_id": "U018",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "高敏",
+      "user_nickname": "敏敏",
+      "gender": "女",
+      "department": "客服部",
+      "phone_number": "13000130018"
+    },
+    {
+      "user_id": "U019",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "郑峰",
+      "user_nickname": "峰峰",
+      "gender": "男",
+      "department": "采购部",
+      "phone_number": "13100131019"
+    },
+    {
+      "user_id": "U020",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "唐丽",
+      "user_nickname": "丽丽",
+      "gender": "女",
+      "department": "设计部",
+      "phone_number": "13200132020"
+    },
+    {
+      "user_id": "U021",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "冯凯",
+      "user_nickname": "凯凯",
+      "gender": "男",
+      "department": "销售部",
+      "phone_number": "13800138021"
+    },
+    {
+      "user_id": "U022",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "程瑶",
+      "user_nickname": "瑶瑶",
+      "gender": "女",
+      "department": "财务部",
+      "phone_number": "13900139022"
+    },
+    {
+      "user_id": "U023",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "袁飞",
+      "user_nickname": "飞飞",
+      "gender": "男",
+      "department": "技术部",
+      "phone_number": "13600136023"
+    },
+    {
+      "user_id": "U024",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "蒋静",
+      "user_nickname": "静静",
+      "gender": "女",
+      "department": "人力资源部",
+      "phone_number": "13700137024"
+    },
+    {
+      "user_id": "U025",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "韩勇",
+      "user_nickname": "勇哥",
+      "gender": "男",
+      "department": "市场部",
+      "phone_number": "13500135025"
+    },
+    {
+      "user_id": "U026",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "曹芳",
+      "user_nickname": "芳芳",
+      "gender": "女",
+      "department": "行政部",
+      "phone_number": "13400134026"
+    },
+    {
+      "user_id": "U027",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "许杰",
+      "user_nickname": "杰仔",
+      "gender": "男",
+      "department": "研发部",
+      "phone_number": "13300133027"
+    },
+    {
+      "user_id": "U028",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "董敏",
+      "user_nickname": "敏敏",
+      "gender": "女",
+      "department": "客服部",
+      "phone_number": "13000130028"
+    },
+    {
+      "user_id": "U029",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "萧峰",
+      "user_nickname": "峰峰",
+      "gender": "男",
+      "department": "采购部",
+      "phone_number": "13100131029"
+    },
+    {
+      "user_id": "U030",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "卢丽",
+      "user_nickname": "丽丽",
+      "gender": "女",
+      "department": "设计部",
+      "phone_number": "13200132030"
+    },
+    {
+      "user_id": "U031",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "江晨",
+      "user_nickname": "晨晨",
+      "gender": "男",
+      "department": "销售部",
+      "phone_number": "13800138031"
+    },
+    {
+      "user_id": "U032",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "潘悦",
+      "user_nickname": "悦悦",
+      "gender": "女",
+      "department": "财务部",
+      "phone_number": "13900139032"
+    },
+    {
+      "user_id": "U033",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "蔡强",
+      "user_nickname": "强子",
+      "gender": "男",
+      "department": "技术部",
+      "phone_number": "13600136033"
+    },
+    {
+      "user_id": "U034",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "田静",
+      "user_nickname": "静静",
+      "gender": "女",
+      "department": "人力资源部",
+      "phone_number": "13700137034"
+    },
+    {
+      "user_id": "U035",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "石宇",
+      "user_nickname": "小宇",
+      "gender": "男",
+      "department": "市场部",
+      "phone_number": "13500135035"
+    },
+    {
+      "user_id": "U036",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "姚婷",
+      "user_nickname": "婷婷",
+      "gender": "女",
+      "department": "行政部",
+      "phone_number": "13400134036"
+    },
+    {
+      "user_id": "U037",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "尹辉",
+      "user_nickname": "辉哥",
+      "gender": "男",
+      "department": "研发部",
+      "phone_number": "13300133037"
+    },
+    {
+      "user_id": "U038",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "易敏",
+      "user_nickname": "敏敏",
+      "gender": "女",
+      "department": "客服部",
+      "phone_number": "13000130038"
+    },
+    {
+      "user_id": "U039",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "文峰",
+      "user_nickname": "峰峰",
+      "gender": "男",
+      "department": "采购部",
+      "phone_number": "13100131039"
+    },
+    {
+      "user_id": "U040",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "喻丽",
+      "user_nickname": "丽丽",
+      "gender": "女",
+      "department": "设计部",
+      "phone_number": "13200132040"
+    },
+    {
+      "user_id": "U041",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "苏晨",
+      "user_nickname": "晨晨",
+      "gender": "男",
+      "department": "销售部",
+      "phone_number": "13800138041"
+    },
+    {
+      "user_id": "U042",
+      "user_avatar": "./svg/expand.svg",
+      "user_name": "魏悦",
+      "user_nickname": "悦悦",
+      "gender": "女",
+      "department": "财务部",
+      "phone_number": "13900139042"
+    }
+]
