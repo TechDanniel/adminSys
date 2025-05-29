@@ -21,7 +21,7 @@
               <!-- 选定列展示 -->
               <el-popover
                   placement="bottom-start"
-                  popper-style={{ padding: 0 }}
+                  :popper-style="{ padding: 0 }"
                   width="200"
                   trigger="click"
               >
