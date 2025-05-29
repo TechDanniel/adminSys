@@ -4,6 +4,8 @@
 name: Lint Code
 on:
   push:
+    paths-ignore:
+      - 'stats.html'  # 忽略根目录下的 stats.html
     branches:
       - main
   pull_request:
