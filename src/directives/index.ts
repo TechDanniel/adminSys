@@ -1,2 +1,2 @@
-export * from "./longpress/index";
-export * from "./auth/index";
+export * from './longpress/index'
+export * from './auth/index'

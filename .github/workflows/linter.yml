@@ -1,0 +1,62 @@
+#github Actions配置解析
+#在代码提交到main分支或创建指向main的拉取请求时，自动执行代码检查(lint)和类型检查(TypeCheck)
+#1.触发条件
+name: Lint Code
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+#2.核心任务解析
+#环境准备
+jobs:
+  build:
+    name: Lint Code
+    runs-on: ubuntu-latest #指定了作业将在github托管的最新ubuntu虚拟机上运行
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4 #从github仓库中获取代码
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4 
+        with:
+          node-version: 22 ##安装node.js 22.x版本
+
+      - uses: pnpm/action-setup@v3
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 9
+          run_install: false #安装pnpm v9，但不立即执行依赖安装
+
+      #依赖缓存优化，pnpm 使用内容寻址存储，同一个包无论被多少项目依赖，只会存储一次。
+      #pnpm store path返回pnpm存储目录的路径，$GITHUB_OUTPUT是一个特殊的环境变量，用于将输出传递给后续步骤
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+        #设置pnpm缓存，path指定缓存文件的目录；key中的runner.os运行器操作系统，hashFiles('**/pnpm-lock.yaml')是根据pnpm-lock.yaml文件的哈希值（包含了项目的依赖版本，文件内容变化哈希值变化，触发缓存失效）
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+    
+      #执行代码检查
+      #--no-frozen-lockfile安装依赖严格按照pnpm-lock.yaml文件中的依赖版本
+      #pnpm lint执行代码格式检查，通常在script中定义；pnpm typecheck执行 TypeScript 类型检查，在script中定义
+      - name: Start Lint Code
+        run: |
+          pnpm install --no-frozen-lockfile
+          pnpm lint
+          pnpm typecheck
+        env:
+          VALIDATE_ALL_CODEBASE: false #控制代码检查范围，false只检查变更的代码
+          DEFAULT_BRANCH: main #指定默认分支，对比变更时作为基准分支，只检查相对于main分支的变更
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} #secrets.GITHUB_TOKEN 是 GitHub Actions 自动为每个工作流运行创建的安全令牌，具有当前仓库的读写权限。

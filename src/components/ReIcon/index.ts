@@ -8,6 +8,6 @@ const IconifyIconOffline = iconifyIconOffline
 //在线图标组件
 const IconifyIconOnline = iconifyIconOnline
 //iconfont组件
-const FontIcon=fontIcon
+const FontIcon = fontIcon
 
-export {IconifyIconOffline,IconifyIconOnline,FontIcon}
+export { IconifyIconOffline, IconifyIconOnline, FontIcon }

@@ -2,14 +2,14 @@
 
 interface FormItemProps {
   /** 角色名称 */
-  name: string;
+  name: string
   /** 角色编号 */
-  code: string;
+  code: string
   /** 备注 */
-  remark: string;
+  remark: string
 }
 interface FormProps {
-  formInline: FormItemProps;
+  formInline: FormItemProps
 }
 
-export type { FormItemProps, FormProps };
+export type { FormItemProps, FormProps }

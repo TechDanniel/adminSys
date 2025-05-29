@@ -1,6 +1,6 @@
 // import { http } from "@/utils/http";
 
-import axios from "axios";
+import axios from 'axios'
 
 // type Result = {
 //   success: boolean;
@@ -8,5 +8,5 @@ import axios from "axios";
 // };
 
 export const getAsyncRoutes = () => {
-  return axios.get('/get-async-routes');
-};
+  return axios.get('/get-async-routes')
+}

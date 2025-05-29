@@ -1,8 +1,6 @@
-@use "theme";
-@use "transition";
-@use "element-plus";
-@use "sidebar";
-@use "dark";
+@use 'transition';
+@use 'element-plus';
+@use 'sidebar';
 
 /* 自定义全局 CssVar */
 :root {

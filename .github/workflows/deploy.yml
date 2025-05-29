@@ -1,0 +1,40 @@
+name: Build and Deploy
+permissions:
+  contents: write
+on:
+  push:
+    branches: 
+      - pages
+
+jobs:
+  deploy:
+    concurrency: ci-${{ github.ref }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4 #从github仓库获取代码
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          node-version: 9
+          registry-url: https://registry.npmjs.org/
+
+      #1.安装项目依赖
+      #2.构建项目
+      - name: Deploy
+        run: |
+          pnpm install --no-frozen-lockfile
+          pnpm run build
+        
+      #github Actions部署项目
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist #指定要部署的文件夹
+          clean: true #表示在部署前清空目标分支（通常是gh-pages）上的旧文件
