@@ -1,51 +1,44 @@
 <template>
-<div class="navbar bg-[#fff] shadow-sm shadow-[rgba(0,21,41,0.08)]">
+  <div class="navbar bg-[#fff] shadow-sm shadow-[rgba(0,21,41,0.08)]">
     <div v-if="layout === 'vertical'" class="vertical-header-right">
-        <!-- 退出登录 -->
-        <el-dropdown trigger="click">
-            <!--用户头像-->
-            <span class="el-dropdown-link navbar-bg-hover select-none">
-                <img :src="userAvatar" :style="avatarsStyle" />
-                <p v-if="username" class="dark:text-white">{{ username }}</p>
-            </span>
-            <!-- 下拉菜单 -->
-            <template #dropdown>
-                <el-dropdown-menu class="logout">
-                    <!-- 账户设置 -->
-                    <el-dropdown-item>
-                        <InconifyIconOffline
-                          :icon="AccountSettingsIcon"
-                          style="margin: 5px"
-                        />
-                        账户设置
-                    </el-dropdown-item>
-                    <el-dropdown-item @click="logout">
-                    <InconifyIconOffline
-                      :icon="LogoutCircleRLine"
-                      style="margin: 5px"
-                    />
-                    退出系统
-                    </el-dropdown-item>
-                </el-dropdown-menu>
-            </template>
-        </el-dropdown>
-        <!--系统设置-->
-        <span class="set-icon navbar-bg-hover" title="设置"
-        >
+      <!-- 退出登录 -->
+      <el-dropdown trigger="click">
+        <!--用户头像-->
+        <span class="el-dropdown-link navbar-bg-hover select-none">
+          <img :src="userAvatar" :style="avatarsStyle" />
+          <p v-if="username" class="dark:text-white">{{ username }}</p>
+        </span>
+        <!-- 下拉菜单 -->
+        <template #dropdown>
+          <el-dropdown-menu class="logout">
+            <!-- 账户设置 -->
+            <el-dropdown-item>
+              <InconifyIconOffline :icon="AccountSettingsIcon" style="margin: 5px" />
+              账户设置
+            </el-dropdown-item>
+            <el-dropdown-item @click="logout">
+              <InconifyIconOffline :icon="LogoutCircleRLine" style="margin: 5px" />
+              退出系统
+            </el-dropdown-item>
+          </el-dropdown-menu>
+        </template>
+      </el-dropdown>
+      <!--系统设置-->
+      <span class="set-icon navbar-bg-hover" title="设置">
         <InconifyIconOffline :icon="setting" />
       </span>
     </div>
-</div>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { useNav } from '../hooks/useNav';
-import setting from "@iconify-icons/ri/settings-3-line";
-import AccountSettingsIcon from "@iconify-icons/ri/user-settings-line";
-import LogoutCircleRLine from "@iconify-icons/ri/logout-circle-r-line";
-import InconifyIconOffline from '@/components/ReIcon/src/inconifyIconOffline';
+import { useNav } from '../hooks/useNav'
+import setting from '@iconify-icons/ri/settings-3-line'
+import AccountSettingsIcon from '@iconify-icons/ri/user-settings-line'
+import LogoutCircleRLine from '@iconify-icons/ri/logout-circle-r-line'
+import InconifyIconOffline from '@/components/ReIcon/src/inconifyIconOffline'
 
-const {layout, username, userAvatar, avatarsStyle,logout}=useNav()
+const { layout, username, userAvatar, avatarsStyle, logout } = useNav()
 </script>
 
 <style lang="scss" scoped>

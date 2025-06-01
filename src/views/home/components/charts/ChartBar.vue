@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { type PropType, ref, watch, nextTick } from "vue";
+import { type PropType, ref, watch, nextTick } from 'vue'
 import echarts from '@/plugins/echarts'
-import { LegendComponent } from 'echarts/components';
+import { LegendComponent } from 'echarts/components'
 
 // 注册 LegendComponent
-echarts.use([LegendComponent]);
+echarts.use([LegendComponent])
 
 const props = defineProps({
   requireData: {
@@ -15,54 +15,54 @@ const props = defineProps({
     type: Array as PropType<Array<number>>,
     default: () => []
   }
-});
+})
 
-const chartRef = ref();
+const chartRef = ref()
 let chartBar: echarts.ECharts | null = null
 
 watch(
   () => props,
   async () => {
-    await nextTick(); // 确保DOM更新完成后再执行
-    const options={
-      container: ".bar-card",
-      color: ["#41b6ff", "#e85f33"],
+    await nextTick() // 确保DOM更新完成后再执行
+    const options = {
+      container: '.bar-card',
+      color: ['#41b6ff', '#e85f33'],
       tooltip: {
-        trigger: "axis",
+        trigger: 'axis',
         axisPointer: {
-          type: "none"
+          type: 'none'
         }
       },
       grid: {
-        top: "20px",
-        left: "50px",
+        top: '20px',
+        left: '50px',
         right: 0
       },
       legend: {
-        data: ["需求人数", "提问数量"],
+        data: ['需求人数', '提问数量'],
         textStyle: {
-          color: "#606266",
-          fontSize: "0.875rem"
+          color: '#606266',
+          fontSize: '0.875rem'
         },
         bottom: 0
       },
       xAxis: [
         {
-          type: "category",
-          data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+          type: 'category',
+          data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
           axisLabel: {
-            fontSize: "0.875rem"
+            fontSize: '0.875rem'
           },
           axisPointer: {
-            type: "shadow"
+            type: 'shadow'
           }
         }
       ],
       yAxis: [
         {
-          type: "value",
+          type: 'value',
           axisLabel: {
-            fontSize: "0.875rem"
+            fontSize: '0.875rem'
           },
           splitLine: {
             show: false // 去网格线
@@ -72,44 +72,44 @@ watch(
       ],
       series: [
         {
-          name: "需求人数",
-          type: "bar",
+          name: '需求人数',
+          type: 'bar',
           barWidth: 10,
           itemStyle: {
-            color: "#41b6ff",
+            color: '#41b6ff',
             borderRadius: [10, 10, 0, 0]
           },
           data: props.requireData
         },
         {
-          name: "提问数量",
-          type: "bar",
+          name: '提问数量',
+          type: 'bar',
           barWidth: 10,
           itemStyle: {
-            color: "#e86033ce",
+            color: '#e86033ce',
             borderRadius: [10, 10, 0, 0]
           },
           data: props.questionData
         }
       ]
-    };
+    }
     const drawChart = () => {
-        if (chartRef.value) {
-            if (!chartBar) {
-                // 初始化 ECharts 实例
-                chartBar = echarts.init(chartRef.value);
-            }
-            // 设置图表配置
-            chartBar.setOption(options);
+      if (chartRef.value) {
+        if (!chartBar) {
+          // 初始化 ECharts 实例
+          chartBar = echarts.init(chartRef.value)
         }
-    };
-    drawChart();
+        // 设置图表配置
+        chartBar.setOption(options)
+      }
+    }
+    drawChart()
   },
   {
     deep: true,
     immediate: true
   }
-);
+)
 </script>
 
 <template>

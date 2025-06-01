@@ -1,18 +1,14 @@
 <script setup lang="ts">
-import {
-  type EventType,
-  type ButtonProps,
-  type DialogOptions,
-} from "./type";
-import {dialogStore,closeDialog} from "./index"
-import { ref, computed } from "vue";
-import { isFunction } from "lodash";
+import { type EventType, type ButtonProps, type DialogOptions } from './type'
+import { dialogStore, closeDialog } from './index'
+import { ref, computed } from 'vue'
+import { isFunction } from 'lodash'
 
 defineOptions({
-  name: "ReDialog"
-});
+  name: 'ReDialog'
+})
 
-const sureBtnMap = ref({});
+const sureBtnMap = ref({})
 
 const footerButtons = computed(() => {
   return (options: DialogOptions) => {
@@ -20,73 +16,59 @@ const footerButtons = computed(() => {
       ? options.footerButtons
       : ([
           {
-            label: "取消",
+            label: '取消',
             text: true,
             bg: true,
             btnClick: ({ dialog: { options, index } }) => {
-              const done = () =>
-                closeDialog(options, index, { command: "cancel" });
+              const done = () => closeDialog(options, index, { command: 'cancel' })
               if (options?.beforeCancel && isFunction(options?.beforeCancel)) {
-                options.beforeCancel(done, { options, index });
+                options.beforeCancel(done, { options, index })
               } else {
-                done();
+                done()
               }
             }
           },
           {
-            label: "确定",
-            type: "primary",
+            label: '确定',
+            type: 'primary',
             text: true,
             bg: true,
             popconfirm: options?.popconfirm,
             btnClick: ({ dialog: { options, index } }) => {
               if (options?.sureBtnLoading) {
-                sureBtnMap.value[index] = Object.assign(
-                  {},
-                  sureBtnMap.value[index],
-                  {
-                    loading: true
-                  }
-                );
+                sureBtnMap.value[index] = Object.assign({}, sureBtnMap.value[index], {
+                  loading: true
+                })
               }
               const closeLoading = () => {
                 if (options?.sureBtnLoading) {
-                  sureBtnMap.value[index].loading = false;
+                  sureBtnMap.value[index].loading = false
                 }
-              };
+              }
               const done = () => {
-                closeLoading();
-                closeDialog(options, index, { command: "sure" });
-              };
+                closeLoading()
+                closeDialog(options, index, { command: 'sure' })
+              }
               if (options?.beforeSure && isFunction(options?.beforeSure)) {
-                options.beforeSure(done, { options, index, closeLoading });
+                options.beforeSure(done, { options, index, closeLoading })
               } else {
-                done();
+                done()
               }
             }
           }
-        ] as Array<ButtonProps>);
-  };
-});
+        ] as Array<ButtonProps>)
+  }
+})
 
-
-function eventsCallBack(
-  event: EventType,
-  options: DialogOptions,
-  index: number
-) {
+function eventsCallBack(event: EventType, options: DialogOptions, index: number) {
   if (options?.[event] && isFunction(options?.[event])) {
-    return options?.[event]({ options, index });
+    return options?.[event]({ options, index })
   }
 }
 
-function handleClose(
-  options: DialogOptions,
-  index: number,
-  args = { command: "close" }
-) {
-  closeDialog(options, index, args);
-  eventsCallBack("close", options, index);
+function handleClose(options: DialogOptions, index: number, args = { command: 'close' }) {
+  closeDialog(options, index, args)
+  eventsCallBack('close', options, index)
 }
 </script>
 
@@ -103,13 +85,8 @@ function handleClose(
     @closeAutoFocus="eventsCallBack('closeAutoFocus', options, index)"
   >
     <!-- header -->
-    <template
-      v-if="options?.headerRender"
-      #header="{ close, titleId, titleClass }"
-    >
-      <component
-        :is="options?.headerRender({ close, titleId, titleClass })"
-      />
+    <template v-if="options?.headerRender" #header="{ close, titleId, titleClass }">
+      <component :is="options?.headerRender({ close, titleId, titleClass })" />
     </template>
     <component
       v-bind="options?.props"

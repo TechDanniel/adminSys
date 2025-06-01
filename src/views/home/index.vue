@@ -2,20 +2,20 @@
   <div>
     <el-row :gutter="24" justify="space-around">
       <el-col
-        v-for="(item,index) in charData"
+        v-for="(item, index) in charData"
         :key="index"
         class="mb-[18px]"
         :span="6"
         v-motion
         :initial="{
           opacity: 0,
-          y: 100,
+          y: 100
         }"
         :enter="{
-          opacity:1,
-          y:0,
-          transition:{
-            delay:1000
+          opacity: 1,
+          y: 0,
+          transition: {
+            delay: 1000
           }
         }"
       >
@@ -29,31 +29,18 @@
                 backgroundColor: item.bgColor
               }"
             >
-              <IconifyIconOffline 
-                :icon="item.icon"
-                :color="item.color"
-                width="18"
-              />
+              <IconifyIconOffline :icon="item.icon" :color="item.color" width="18" />
             </div>
           </div>
           <!-- 数字，百分比和折线图 -->
           <div class="flex justify-between items-start mt-3">
             <!-- 宽度为容器的1/2 -->
             <div class="w-1/2">
-              <ReNormalCountTo
-              :duration="item.duration"
-              :fontSize="'1.6em'"
-              :startVal="100"
-              :endVal="item.value"
-              />
+              <ReNormalCountTo :duration="item.duration" :fontSize="'1.6em'" :startVal="100" :endVal="item.value" />
             </div>
             <p class="font-medium text-green-500">{{ item.percent }}</p>
           </div>
-          <CharLine
-            class="!w-1/2"
-            :color="item.color"
-            :data="item.data"
-          />
+          <CharLine class="!w-1/2" :color="item.color" :data="item.data" />
         </el-card>
       </el-col>
 
@@ -86,7 +73,7 @@
           </div>
         </el-card>
       </el-col>
-        
+
       <el-col
         v-motion
         class="mb-[18px]"
@@ -110,12 +97,7 @@
           <div
             v-for="(item, index) in progressData"
             :key="index"
-            :class="[
-              'flex',
-              'justify-between',
-              'items-start',
-              index === 0 ? 'mt-8' : 'mt-[2.15rem]'
-            ]"
+            :class="['flex', 'justify-between', 'items-start', index === 0 ? 'mt-8' : 'mt-[2.15rem]']"
           >
             <el-progress
               :text-inside="true"
@@ -137,28 +119,28 @@
 </template>
 
 <script setup lang="ts">
-import { IconifyIconOffline } from "@/components/ReIcon/index";
-import CharLine from "./components/charts/ChartLine.vue"
-import ChartBar from "./components/charts/ChartBar.vue";
-import { ReNormalCountTo } from "@/components/ReCountTo";
-import { charData,progressData,barChartData } from "./data";
-import { ref } from "vue";
-import { OptionsType } from "./type";
+import { IconifyIconOffline } from '@/components/ReIcon/index'
+import CharLine from './components/charts/ChartLine.vue'
+import ChartBar from './components/charts/ChartBar.vue'
+import { ReNormalCountTo } from '@/components/ReCountTo'
+import { charData, progressData, barChartData } from './data'
+import { ref } from 'vue'
+import { OptionsType } from './type'
 import Segmented from '@/components/ReSegment/index.vue'
 
 defineOptions({
-    name:"welcome"
+  name: 'welcome'
 })
 
-let curWeek = ref(1); // 0上周、1本周
+let curWeek = ref(1) // 0上周、1本周
 const optionsBasis: Array<OptionsType> = [
   {
-    label: "上周"
+    label: '上周'
   },
   {
-    label: "本周"
+    label: '本周'
   }
-];
+]
 </script>
 
 <style lang="scss" scoped>

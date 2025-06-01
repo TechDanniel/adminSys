@@ -4,5 +4,5 @@
 </template>
 
 <script lang="ts" setup>
-import ReDialog from "@/components/ReDialog/index.vue";
+import ReDialog from '@/components/ReDialog/index.vue'
 </script>

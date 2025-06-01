@@ -92,7 +92,8 @@ export default [
     files: ['**/*.d.ts'],
     rules: {
       //关闭未使用变量的报错
-      '@typescript-eslint/no-unused-vars': 'off'
+      '@typescript-eslint/no-unused-vars': 'off',
+      '@typescript-eslint/no-empty-object-type': 'off'
     }
   },
   //针对所有js文件，包括commonJS/ESM(*.js,*.cjs,*.mjs)
@@ -110,13 +111,14 @@ export default [
     languageOptions: {
       parser: parserVue,
       parserOptions: {
-        //允许解析jsx语法
+        parser: parserTypeScript, // 嵌套 TypeScript 解析器用于 <script lang="ts">
         ecmaFeatures: { jsx: true },
-        //支持.vue扩展名
         extraFileExtensions: ['.vue'],
-        parser: parserTypeScript,
         sourceType: 'module'
       }
+    },
+    plugins: {
+      vue: pluginVue
     },
     rules: {
       //关闭未使用变量的检查（通常交给TypeScript处理）

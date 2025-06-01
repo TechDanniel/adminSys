@@ -3,7 +3,7 @@ permissions:
   contents: write
 on:
   push:
-    branches: 
+    branches:
       - pages
 
 jobs:
@@ -31,7 +31,7 @@ jobs:
         run: |
           pnpm install --no-frozen-lockfile
           pnpm run build
-        
+
       #github Actions部署项目
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4

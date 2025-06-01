@@ -9,7 +9,7 @@
     "preview": "vite preview && start chrome",
     "prepare": "husky",
     "typecheck": "tsc --noEmit && vue-tsc --noEmit --skipLibCheck",
-    "lint:eslint": "eslint --cache --max-warnings 0  \"{src,mock,build}/**/*.{vue,js,ts,tsx}\" --fix",
+    "lint:eslint": "eslint --cache  --max-warnings 0  \"{src,mock,build}/**/*.{vue,js,ts,tsx}\" --fix --cache-location node_modules/.cache/eslintcache/",
     "lint:prettier": "prettier --write  \"src/**/*.{js,ts,json,tsx,css,scss,vue,html,md}\"",
     "lint:stylelint": "stylelint --cache --fix \"**/*.{html,vue,css,scss}\" --cache-location node_modules/.cache/stylelint/",
     "lint": "pnpm lint:eslint && pnpm lint:prettier && pnpm lint:stylelint"

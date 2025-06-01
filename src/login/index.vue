@@ -22,8 +22,10 @@
           <el-form v-if="currentPage === 0" ref="ruleFormRef" :model="ruleForm" :rules="loginRules" size:large>
             <!-- 用户名 -->
             <Motion :delay="100">
-              <el-form-item :rules="[{ required: true, message: 'username is requried', trigger: 'blur' }]"
-                prop="username">
+              <el-form-item
+                :rules="[{ required: true, message: 'username is requried', trigger: 'blur' }]"
+                prop="username"
+              >
                 <el-input v-model="ruleForm.username" clearable placeholder="账号" :prefix-icon="useRenderIcon(User)" />
               </el-form-item>
             </Motion>
@@ -31,16 +33,25 @@
             <!--密码-->
             <Motion :delay="150">
               <el-form-item prop="password">
-                <el-input v-model="ruleForm.password" clearable show-password placeholder="密码"
-                  :prefix-icon="useRenderIcon(Lock)" />
+                <el-input
+                  v-model="ruleForm.password"
+                  clearable
+                  show-password
+                  placeholder="密码"
+                  :prefix-icon="useRenderIcon(Lock)"
+                />
               </el-form-item>
             </Motion>
 
             <!-- 验证码 -->
             <Motion :delay="200">
               <el-form-item prop="verifyCode">
-                <el-input v-model="ruleForm.verifyCode" clearable placeholder="验证码"
-                  :prefix-icon="useRenderIcon('ri:shield-keyhole-line')">
+                <el-input
+                  v-model="ruleForm.verifyCode"
+                  clearable
+                  placeholder="验证码"
+                  :prefix-icon="useRenderIcon('ri:shield-keyhole-line')"
+                >
                   <template #append>
                     <ReImageVerify />
                   </template>
@@ -58,17 +69,11 @@
                       <IconifyIconOffline
                         :icon="Info"
                         class="ml-1"
-                        v-tippy="{content:'勾选后规定天数内自动登录',placement:'top'}"
+                        v-tippy="{ content: '勾选后规定天数内自动登录', placement: 'top' }"
                       />
                     </span>
                   </el-checkbox>
-                  <el-button
-                    link
-                    type="primary"
-                    @click="useUserStore().SET_CURRENTPAGE(4)"
-                  >
-                    忘记密码
-                  </el-button>
+                  <el-button link type="primary" @click="useUserStore().SET_CURRENTPAGE(4)"> 忘记密码 </el-button>
                 </div>
               </el-form-item>
             </Motion>
@@ -90,23 +95,23 @@
             </Motion>
 
             <Motion :delay="300">
-                <el-form-item>
-                  <div class="w-full h-[20px] flex justify-between items-center">
-                    <el-button
-                      v-for="(item,index) in operates"
-                      :key="index"
-                      class="w-full mt-4"
-                      size="default"
-                      @click="useUserStore().SET_CURRENTPAGE(index + 1)"
-                    >
-                      {{ item }}
-                    </el-button>
-                  </div>
-                </el-form-item>
+              <el-form-item>
+                <div class="w-full h-[20px] flex justify-between items-center">
+                  <el-button
+                    v-for="(item, index) in operates"
+                    :key="index"
+                    class="w-full mt-4"
+                    size="default"
+                    @click="useUserStore().SET_CURRENTPAGE(index + 1)"
+                  >
+                    {{ item }}
+                  </el-button>
+                </div>
+              </el-form-item>
             </Motion>
           </el-form>
 
-           <!-- 手机号登录 -->
+          <!-- 手机号登录 -->
           <LoginPhone v-if="currentPage === 1" />
           <!-- 二维码登录 -->
           <LoginQrCode v-if="currentPage === 2" />
@@ -122,37 +127,36 @@
 
 <script setup lang="ts">
 // avatar, illustration是 render 函数对象
-import { bg, avatar, illustration } from "./utils/static";
-import Motion from "./utils/motion"
-import { toRaw, computed, reactive, ref, watch } from "vue";
-import TypeIt from "@/components/ReTypeit";
-import { useUserStore } from "@/store/modules/user";
-import { useRenderIcon } from "@/components/ReIcon/src/hooks";
-import { loginRules } from "./utils/rule";
-import ReImageVerify from "@/components/ReImageVerify/index.vue"
-import { FormInstance,ElMessage } from "element-plus";
-import { getTopMenu, initRouter } from "@/router/utils";
+import { bg, avatar, illustration } from './utils/static'
+import Motion from './utils/motion'
+import { toRaw, computed, reactive, ref, watch } from 'vue'
+import TypeIt from '@/components/ReTypeit'
+import { useUserStore } from '@/store/modules/user'
+import { useRenderIcon } from '@/components/ReIcon/src/hooks'
+import { loginRules } from './utils/rule'
+import ReImageVerify from '@/components/ReImageVerify/index.vue'
+import { FormInstance, ElMessage } from 'element-plus'
+import { getTopMenu, initRouter } from '@/router/utils'
 
-import LoginPhone from "./components/LoginPhone.vue"
-import LoginQrCode from "./components/LoginQrCode.vue"
-import LoginRegist from "./components/LoginRegist.vue"
-import LoginUpdate from "./components/LoginUpdate.vue"
+import LoginPhone from './components/LoginPhone.vue'
+import LoginQrCode from './components/LoginQrCode.vue'
+import LoginRegist from './components/LoginRegist.vue'
+import LoginUpdate from './components/LoginUpdate.vue'
 
-import Lock from "@iconify-icons/ri/lock-fill";
-import User from "@iconify-icons/ri/user-3-fill";
-import Info from "@iconify-icons/ri/information-line";
-import { IconifyIconOffline } from "@/components/ReIcon";
-import router from "@/router";
-
+import Lock from '@iconify-icons/ri/lock-fill'
+import User from '@iconify-icons/ri/user-3-fill'
+import Info from '@iconify-icons/ri/information-line'
+import { IconifyIconOffline } from '@/components/ReIcon'
+import router from '@/router'
 
 defineOptions({
-  name: "Login"
+  name: 'Login'
 })
 
 const ruleForm = reactive({
-  username: "admin",
-  password: "admin123",
-  verifyCode: ""
+  username: 'admin',
+  password: 'admin123',
+  verifyCode: ''
 })
 
 //登陆方式
@@ -161,44 +165,47 @@ const currentPage = computed(() => {
 })
 
 //七天免登录复选框
-const checked = ref(false);
+const checked = ref(false)
 watch(checked, bool => {
-  useUserStore().SET_ISREMEMBERED(bool);
-});
+  useUserStore().SET_ISREMEMBERED(bool)
+})
 
 //登录按钮
-const loading=ref(false)
-const disabled=ref(false)
-const ruleFormRef=ref<FormInstance>()
-const onLogin=async(formEl:FormInstance|undefined)=>{
-  if(!formEl) return
-  await formEl.validate(valid=>{
-    if(valid){
-      useUserStore().loginByUsername({username:ruleForm.username,password:ruleForm.password}).then(
-        res=>{
-          if(res.success){
-            return initRouter().then(()=>{
-              disabled.value=true
+const loading = ref(false)
+const disabled = ref(false)
+const ruleFormRef = ref<FormInstance>()
+const onLogin = async (formEl: FormInstance | undefined) => {
+  if (!formEl) return
+  await formEl.validate(valid => {
+    if (valid) {
+      useUserStore()
+        .loginByUsername({ username: ruleForm.username, password: ruleForm.password })
+        .then(res => {
+          if (res.success) {
+            return initRouter().then(() => {
+              disabled.value = true
               //跳转到顶级菜单，true表示添加到标签页
-              router.push(getTopMenu(true).path).then(()=>{
-                ElMessage({message: '登录成功',type: 'success'})
-              }).finally(()=>disabled.value=false)
+              router
+                .push(getTopMenu(true).path)
+                .then(() => {
+                  ElMessage({ message: '登录成功', type: 'success' })
+                })
+                .finally(() => (disabled.value = false))
             })
-          }else{
+          } else {
             ElMessage.error('登陆失败')
           }
-        }
-      )
+        })
     }
   })
 }
 
 //不同登录方式
-const operates=["手机登录","二维码登录","注册"]
+const operates = ['手机登录', '二维码登录', '注册']
 </script>
 
 <style scoped lang="scss">
-@import url("@/style/login.css");
+@import url('@/style/login.css');
 
 :deep(.el-input-group__append, .el-input-group__prepend) {
   padding: 0;

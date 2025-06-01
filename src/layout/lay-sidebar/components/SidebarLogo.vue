@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { getTopMenu } from "@/router/utils";
+import { getTopMenu } from '@/router/utils'
 
 defineProps({
   collapse: Boolean
-});
+})
 </script>
 
 <template>
@@ -19,14 +19,8 @@ defineProps({
         <img src="/logo.svg" alt="logo" />
         <span class="sidebar-title">AdminSys</span>
       </router-link>
-      <router-link
-        v-else
-        key="expand"
-        title="AdminSys"
-        class="sidebar-logo-link"
-        :to="getTopMenu()?.path ?? '/'"
-      >
-        <img src='/logo.svg' alt="logo" />
+      <router-link v-else key="expand" title="AdminSys" class="sidebar-logo-link" :to="getTopMenu()?.path ?? '/'">
+        <img src="/logo.svg" alt="logo" />
         <span class="sidebar-title">AdminSys</span>
       </router-link>
     </transition>
