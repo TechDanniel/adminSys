@@ -20,6 +20,9 @@ importers:
       '@iconify/vue':
         specifier: ^4.3.0
         version: 4.3.0(vue@3.5.14(typescript@5.8.3))
+      '@vueuse/core':
+        specifier: ^13.3.0
+        version: 13.3.0(vue@3.5.14(typescript@5.8.3))
       '@vueuse/motion':
         specifier: ^3.0.3
         version: 3.0.3(vue@3.5.14(typescript@5.8.3))
@@ -32,6 +35,9 @@ importers:
       crypto-js:
         specifier: ^4.2.0
         version: 4.2.0
+      dayjs:
+        specifier: ^1.11.13
+        version: 1.11.13
       echarts:
         specifier: ^5.6.0
         version: 5.6.0
@@ -50,6 +56,12 @@ importers:
       jsonwebtoken:
         specifier: ^9.0.2
         version: 9.0.2
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
+      mitt:
+        specifier: ^3.0.1
+        version: 3.0.1
       nprogress:
         specifier: ^0.2.0
         version: 0.2.0
@@ -103,7 +115,7 @@ importers:
         version: 8.8.7
       unplugin-auto-import:
         specifier: ^19.1.2
-        version: 19.3.0(@nuxt/kit@3.17.4)(@vueuse/core@13.2.0(vue@3.5.14(typescript@5.8.3)))
+        version: 19.3.0(@nuxt/kit@3.17.4)(@vueuse/core@13.3.0(vue@3.5.14(typescript@5.8.3)))
       unplugin-vue-components:
         specifier: ^28.4.1
         version: 28.7.0(@babel/parser@7.27.2)(@nuxt/kit@3.17.4)(vue@3.5.14(typescript@5.8.3))
@@ -1169,16 +1181,16 @@ packages:
   '@vue/shared@3.5.14':
     resolution: {integrity: sha512-oXTwNxVfc9EtP1zzXAlSlgARLXNC84frFYkS0HHz0h3E4WZSP9sywqjqzGCP9Y34M8ipNmd380pVgmMuwELDyQ==}
 
-  '@vueuse/core@13.2.0':
-    resolution: {integrity: sha512-n5TZoIAxbWAQ3PqdVPDzLgIRQOujFfMlatdI+f7ditSmoEeNpPBvp7h2zamzikCmrhFIePAwdEQB6ENccHr7Rg==}
+  '@vueuse/core@13.3.0':
+    resolution: {integrity: sha512-uYRz5oEfebHCoRhK4moXFM3NSCd5vu2XMLOq/Riz5FdqZMy2RvBtazdtL3gEcmDyqkztDe9ZP/zymObMIbiYSg==}
     peerDependencies:
       vue: ^3.5.0
 
   '@vueuse/core@9.13.0':
     resolution: {integrity: sha512-pujnclbeHWxxPRqXWmdkKV5OX4Wk4YeK7wusHqRwU0Q7EFusHoqNA/aPhB6KCh9hEqJkLAJo7bb0Lh9b+OIVzw==}
 
-  '@vueuse/metadata@13.2.0':
-    resolution: {integrity: sha512-kPpzuQCU0+D8DZCzK0iPpIcXI+6ufWSgwnjJ6//GNpEn+SHViaCtR+XurzORChSgvpHO9YC8gGM97Y1kB+UabA==}
+  '@vueuse/metadata@13.3.0':
+    resolution: {integrity: sha512-42IzJIOYCKIb0Yjv1JfaKpx8JlCiTmtCWrPxt7Ja6Wzoq0h79+YVXmBV03N966KEmDEESTbp5R/qO3AB5BDnGw==}
 
   '@vueuse/metadata@9.13.0':
     resolution: {integrity: sha512-gdU7TKNAUVlXXLbaF+ZCfte8BjRJQWPCa2J55+7/h+yDtzw3vOoGQDRXzI6pyKyo6bXFT5/QoPE4hAknExjRLQ==}
@@ -1190,6 +1202,11 @@ packages:
 
   '@vueuse/shared@13.2.0':
     resolution: {integrity: sha512-vx9ZPDF5HcU9up3Jgt3G62dMUfZEdk6tLyBAHYAG4F4n73vpaA7J5hdncDI/lS9Vm7GA/FPlbOmh9TrDZROTpg==}
+    peerDependencies:
+      vue: ^3.5.0
+
+  '@vueuse/shared@13.3.0':
+    resolution: {integrity: sha512-L1QKsF0Eg9tiZSFXTgodYnu0Rsa2P0En2LuLrIs/jgrkyiDuJSsPZK+tx+wU0mMsYHUYEjNsuE41uqqkuR8VhA==}
     peerDependencies:
       vue: ^3.5.0
 
@@ -4514,11 +4531,11 @@ snapshots:
 
   '@vue/shared@3.5.14': {}
 
-  '@vueuse/core@13.2.0(vue@3.5.14(typescript@5.8.3))':
+  '@vueuse/core@13.3.0(vue@3.5.14(typescript@5.8.3))':
     dependencies:
       '@types/web-bluetooth': 0.0.21
-      '@vueuse/metadata': 13.2.0
-      '@vueuse/shared': 13.2.0(vue@3.5.14(typescript@5.8.3))
+      '@vueuse/metadata': 13.3.0
+      '@vueuse/shared': 13.3.0(vue@3.5.14(typescript@5.8.3))
       vue: 3.5.14(typescript@5.8.3)
 
   '@vueuse/core@9.13.0(vue@3.5.14(typescript@5.8.3))':
@@ -4531,13 +4548,13 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
-  '@vueuse/metadata@13.2.0': {}
+  '@vueuse/metadata@13.3.0': {}
 
   '@vueuse/metadata@9.13.0': {}
 
   '@vueuse/motion@3.0.3(vue@3.5.14(typescript@5.8.3))':
     dependencies:
-      '@vueuse/core': 13.2.0(vue@3.5.14(typescript@5.8.3))
+      '@vueuse/core': 13.3.0(vue@3.5.14(typescript@5.8.3))
       '@vueuse/shared': 13.2.0(vue@3.5.14(typescript@5.8.3))
       defu: 6.1.4
       framesync: 6.1.2
@@ -4550,6 +4567,10 @@ snapshots:
       - magicast
 
   '@vueuse/shared@13.2.0(vue@3.5.14(typescript@5.8.3))':
+    dependencies:
+      vue: 3.5.14(typescript@5.8.3)
+
+  '@vueuse/shared@13.3.0(vue@3.5.14(typescript@5.8.3))':
     dependencies:
       vue: 3.5.14(typescript@5.8.3)
 
@@ -6868,7 +6889,7 @@ snapshots:
 
   unpipe@1.0.0: {}
 
-  unplugin-auto-import@19.3.0(@nuxt/kit@3.17.4)(@vueuse/core@13.2.0(vue@3.5.14(typescript@5.8.3))):
+  unplugin-auto-import@19.3.0(@nuxt/kit@3.17.4)(@vueuse/core@13.3.0(vue@3.5.14(typescript@5.8.3))):
     dependencies:
       local-pkg: 1.1.1
       magic-string: 0.30.17
@@ -6878,7 +6899,7 @@ snapshots:
       unplugin-utils: 0.2.4
     optionalDependencies:
       '@nuxt/kit': 3.17.4
-      '@vueuse/core': 13.2.0(vue@3.5.14(typescript@5.8.3))
+      '@vueuse/core': 13.3.0(vue@3.5.14(typescript@5.8.3))
 
   unplugin-utils@0.2.4:
     dependencies:
