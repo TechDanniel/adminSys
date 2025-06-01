@@ -130,7 +130,9 @@ export default [
       //不强制要求emits选项显示声明
       'vue/require-explicit-emits': 'off',
       //允许props没有默认值
-      'vue/require-default-prop': 'off'
+      'vue/require-default-prop': 'off',
+      //关闭强制要求 Vue 组件中所有触发的事件（this.$emit('xxx')）必须在 emits 选项中显式声明。
+      "vue/require-explicit-emBluetoothLEScanFilterts": "off",
     }
   }
 ]

@@ -108,9 +108,19 @@ declare global {
   }
 
   // 定义扩展后的列类型
-  interface TableColumns<T = any> extends TableColumnCtx<T> {
+  interface TableColumns {
+    prop: string
+    label: string
+    minWidth?: number
     // 添加自定义属性
     hide?: boolean
+    fixed?: boolean
+    formatter?: (row: any, column: TableColumnCtx<any>, cellValue: any, index: number) => any
+    width?: number
+    align?: Align
+    headerAlign?: Align
+    type?: string
+    reserveSelection?: boolean
   }
   type TableColumnList = Array<TableColumns>
 

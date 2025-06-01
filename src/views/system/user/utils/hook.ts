@@ -125,7 +125,7 @@ export function useUser(tableRef: Ref, treeRef: Ref) {
       label: '手机号码',
       prop: 'phone',
       minWidth: 90,
-      formatter: (row, column, cellValue) => cellValue.slice(0, 3) + '*'.repeat(4) + cellValue.slice(7),
+      formatter: (_row, _column, cellValue) => cellValue.slice(0, 3) + '*'.repeat(4) + cellValue.slice(7),
       hide: false
     }
   ]

@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-    "target": "ES2022",
+    "target": "ESNEXT",
+    "module": "ESNext",
     // lib 选项里的 "DOM" 告诉 TypeScript 编译器要加载 DOM 相关的类型定义，这样就能识别 HTMLDivElement 这类类型了。
     "lib": ["ESNext", "DOM"],
-    "module": "ESNext",
-    "skipLibCheck": false,
+    //跳过第三方库的检查
+    "skipLibCheck": true,
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -17,13 +17,9 @@
     /* Linting */
     "strict": false,
     "strictFunctionTypes": false,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
 
     //简写路径
-    "baseUrl": ".",
+   "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     },

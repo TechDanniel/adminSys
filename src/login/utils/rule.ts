@@ -7,7 +7,7 @@ export const REGEXP_PWD = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/
 export const loginRules = reactive<FormRules>({
   password: [
     {
-      validator: (rule, value, callback) => {
+      validator: (_rule, value, callback) => {
         if (value === '') {
           callback(new Error('账号不能为空'))
         } else if (!REGEXP_PWD.test(value)) {

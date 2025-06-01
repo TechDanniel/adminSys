@@ -35,7 +35,7 @@ export const formRules = reactive(<FormRules>{
   ],
   email: [
     {
-      validator: (rule, value, callback) => {
+      validator: (_rule, value, callback) => {
         if (value === '') {
           callback()
         } else if (!isEmail(value)) {
