@@ -28,7 +28,7 @@ pure-admin是一款中后台管理系统，使用vue3、vite、Element-Plus、Ty
 * 实时数据仪表盘
 * 多种图表类型（折线图、柱状图、饼图）
 * 瀑布流产品展示
-* 
+
 ## 💻 技术栈
 ### 前端核心
 * Vue 3 - 最新 Composition API
@@ -102,6 +102,23 @@ pnpm run build
 pnpm lint
 ```
 
-## 欢迎提交代码贡献或反馈问题：
-提交 Bug：请通过 GitHub Issues 描述复现步骤<br>
-代码贡献：请 fork 仓库后提交 Pull Request，并注明功能说明
+## 🤝 贡献指南
+热情欢迎任何形式的贡献！无论是提交Bug、新功能建议还是代码贡献。
+### 提交问题
+发现Bug或有改进建议？请通过 GitHub Issues 提交：
+* 清晰描述问题现象
+* 提供复现步骤
+* 如果是UI问题，请附上截图
+
+### 代码贡献
+* Fork 本项目仓库
+* 创建功能分支 (git checkout -b feat/your-feature)
+* 提交代码变更 (git commit -am 'Add awesome feature')
+* 推送分支 (git push origin feat/your-feature)
+* 创建 Pull Request
+
+### 开发规范
+* 遵循 Vue 3 官方风格指南
+* 使用 TypeScript 强类型
+* 组件采用 Composition API 编写
+* 提交信息遵循 Conventional Commits 规范
